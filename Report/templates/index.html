@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Scanner and Debugger</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1em;
+            text-align: center;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+        }
+
+        textarea {
+            width: 100%;
+            height: 200px;
+            margin-bottom: 10px;
+        }
+
+        input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: -6em;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Code Scanner and Debugger</h1>
+    </header>
+
+    <section>
+        <form method="post">
+            <label for="code">Enter your code:</label>
+            <textarea id="code" name="code" required>{{ code }}</textarea>
+            <br>
+            <input type="submit" value="Scan and Debug">
+        </form>
+
+        {% if scan_result %}
+            <h2>Scan Result:</h2>
+            <pre>
+                {{ scan_result }}
+            </pre>
+        {% endif %}
+
+        {% if debug_result %}
+            <h2>Debug Result:</h2>
+            <pre>
+                {{ debug_result }}
+            </pre>
+        {% endif %}
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Code Scanner and Debugger. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
+
